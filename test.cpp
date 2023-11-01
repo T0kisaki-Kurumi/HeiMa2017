@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 int main(){
-    cout<<"Hello world!"<<endl;
+    cout<<sizeof(int)<<endl;
     system("pause");
     return 0;
 }
