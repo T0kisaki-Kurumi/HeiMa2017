@@ -9,5 +9,5 @@
 Person p;
 cout<<p.x;
 
-②类名访问:
+② 类名访问:
 cout<<Person::x;

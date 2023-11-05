@@ -10,3 +10,6 @@ void showAge() const{
     // 相当于用const关键字修饰对象本身： const ClassName * const this
 }
 注意：常函数只能用在类内的成员函数，用在全局函数直接报错。
+
+常对象：const修饰对象
+const ClassName instance;
