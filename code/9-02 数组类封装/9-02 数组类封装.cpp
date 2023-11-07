@@ -3,7 +3,6 @@
 using namespace std;
 
 #include "MyArray.h"
-// #include "MyArray.cpp"
 
 void test0(){
     MyArray * arr = new MyArray(10);
