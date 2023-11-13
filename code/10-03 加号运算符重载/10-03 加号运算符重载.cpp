@@ -25,6 +25,10 @@ public:
         temp.m_B = this->m_B + a;
         return temp; 
     }
+
+// private:
+//     int m_A;
+//     int m_B;
 };
 
 // // 利用全局函数对加号运算符重载

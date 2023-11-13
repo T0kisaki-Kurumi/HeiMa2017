@@ -2,16 +2,23 @@
 #include <cstring>
 using namespace std;
 
+class Person{
+public:
+    Person(int x): a(x){}
+
+    void printAnother(Person& another){
+        cout<<another.a<<endl;
+    }
+
+private:
+    int a;
+};
+
 
 int main(){
-    // int *p = new int{5};
-    // p[11] = 1;
-    // cout<<p[1]<<endl;
-    int *q = new int[5];
-    q[555] = 1;
-    cout<<sizeof(q)<<endl;
-    // int *r = new int(5);
-    // cout<<sizeof(r)<<endl;
+    Person p1(10);
+    Person p2(20);
+    p1.printAnother(p2);
     system("pause");
     return 0;
 }
