@@ -16,9 +16,11 @@ private:
 
 
 int main(){
-    Person p1(10);
-    Person p2(20);
-    p1.printAnother(p2);
+    // Person p1(10);
+    // Person p2(20);
+    // p1.printAnother(p2);
+    int x = 1;
+    cout<<x++<<endl;
     system("pause");
     return 0;
 }

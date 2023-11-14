@@ -2,7 +2,7 @@
 using namespace std;
 
 class Person{
-    friend ostream& operator<<(ostream &cout, Person &p);
+    friend ostream& operator<<(ostream &cout, const Person &p);
 public:
 
     Person(){}
@@ -20,7 +20,7 @@ private:
 };
 
 // 利用全局函数对左移运算符重载
-ostream& operator<<(ostream &cout, Person &p){
+ostream& operator<<(ostream &cout, const Person &p){
     cout<<p.m_A<<" "<<p.m_B;
     return cout;
 }
