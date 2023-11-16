@@ -16,11 +16,9 @@ private:
 
 
 int main(){
-    // Person p1(10);
-    // Person p2(20);
-    // p1.printAnother(p2);
-    int x = 1;
-    cout<<x++<<endl;
+    char* const name = "aaa";
+    cout<<strlen(name)<<endl;
+    int * a = new int[10];
     system("pause");
     return 0;
 }
