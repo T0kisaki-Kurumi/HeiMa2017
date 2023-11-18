@@ -16,9 +16,12 @@ private:
 
 
 int main(){
-    char* const name = "aaa";
-    cout<<strlen(name)<<endl;
-    int * a = new int[10];
+    char name[1024];
+    cout<<strlen(name)<<" "<<name<<endl;
+    cin>>name;
+    cout<<strlen(name)<<" "<<name<<endl;
+    cin>>name;
+    cout<<strlen(name)<<" "<<name<<endl;
     system("pause");
     return 0;
 }
