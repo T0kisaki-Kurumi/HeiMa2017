@@ -2,26 +2,26 @@
 #include <cstring>
 using namespace std;
 
-class Person{
-public:
-    Person(int x): a(x){}
-
-    void printAnother(Person& another){
-        cout<<another.a<<endl;
-    }
-
+class A{
 private:
-    int a;
+    int x;
 };
 
+class B: public A{
+public:
+    int b;
+};
+
+class C{
+public:
+    int c;
+};
 
 int main(){
-    char name[1024];
-    cout<<strlen(name)<<" "<<name<<endl;
-    cin>>name;
-    cout<<strlen(name)<<" "<<name<<endl;
-    cin>>name;
-    cout<<strlen(name)<<" "<<name<<endl;
+    cout<<sizeof(A)<<endl;
+    cout<<sizeof(B)<<endl;
+    cout<<sizeof(C)<<endl;
+    
     system("pause");
     return 0;
 }
