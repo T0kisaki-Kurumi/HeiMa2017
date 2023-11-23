@@ -3,25 +3,16 @@
 using namespace std;
 
 class A{
-private:
+public:
     int x;
-};
+    int y;
 
-class B: public A{
-public:
-    int b;
-};
-
-class C{
-public:
-    int c;
+    A(int x, int y): x(x), y(y){}
 };
 
 int main(){
-    cout<<sizeof(A)<<endl;
-    cout<<sizeof(B)<<endl;
-    cout<<sizeof(C)<<endl;
-    
+    A a(1,2);
+    cout<<a.x<<" "<<a.y<<endl;    
     system("pause");
     return 0;
 }
