@@ -25,7 +25,7 @@ void test1(){
     SheepTuo st;
     // cout<<st.m_Age<<endl;
 
-    int offsetSheep = *(int*)((int*)*(int*)&st + 1);
+    int offsetSheep = *(int*)((int*)*(int*)&st + 1);  // 在64位系统上疑似为long long
     cout<<"通过Sheep的虚基类表找到的偏移量："<<offsetSheep<<endl;
     int offsetTuo = *(int*)((int*)*((int*)&st + 1) + 1);
     cout<<"通过Tuo的虚基类表找到的偏移量："<<offsetTuo<<endl;

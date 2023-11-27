@@ -10,11 +10,15 @@ public:
     virtual void speak(){
         cout<<"动物说话"<<endl;
     }
+
+    virtual void eat(){
+        cout<<"动物吃东西"<<endl;
+    }
 };
 
 class Cat: public Animal{
 public:
-    virtual void speak() override{
+    void speak(){
         cout<<"小猫喵喵"<<endl;
     }
 };
@@ -26,19 +30,15 @@ public:
     }
 };
 
-// 静态联编，speak函数地址早绑定，调用Animal类中的speak函数
-// 
-void doSpeak(Animal &animal){
-    animal.speak();
-}
-
 void test1(){
+    // 通过引用实现多态
     Cat c;
-    doSpeak(c);
-    Dog d;
-    doSpeak(d);
-    // Animal a = c;
-    // doSpeak(a);
+    Animal &a1 = c;
+    a1.speak();
+
+    // 通过指针实现多态
+    Animal* a2 = new Dog;
+    a2->speak();
 }
 
 int main(){
