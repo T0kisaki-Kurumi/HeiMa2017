@@ -32,6 +32,10 @@ void test1(){
 
     Animal* a = (Animal*)((char*)&st + offsetSheep);
     cout<<"age = "<< a->m_Age;
+
+    // SheepTuo *st = new SheepTuo;
+    // int offsetSheep = *((long long*)*(long long*)st + 1);
+    // cout<<"通过Sheep的虚基类表找到的偏移量："<<offsetSheep<<endl;
 }
 
 int main(){
