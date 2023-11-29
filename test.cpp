@@ -1,10 +1,18 @@
 #include <iostream>
 using namespace std;
 
+class A{
+public:
+	int x = 1;
+};
+
+class B: A{
+
+};
+
 int main(){
-    cout<<INT_MAX<<endl;
-	cout<<LONG_MAX<<endl;
-	cout<<LONG_LONG_MAX<<endl;
+    B b;
+	cout<<b.x;
 	
     system("pause");
 	return 0;
