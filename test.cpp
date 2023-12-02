@@ -1,18 +1,17 @@
 #include <iostream>
 using namespace std;
 
-class A{
-public:
-	int x = 1;
-};
-
-class B: A{
-
-};
+template<typename T>
+void mySwap(T& a, T& b){
+	T tmp = a;
+	a = b;
+	b = tmp;
+}
 
 int main(){
-    B b;
-	cout<<b.x;
+    int a = 1;
+	int b = 2;
+	mySwap(a, b);
 	
     system("pause");
 	return 0;
