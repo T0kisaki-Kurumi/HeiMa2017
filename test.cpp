@@ -1,17 +1,13 @@
 #include <iostream>
 using namespace std;
 
-template<typename T>
-void mySwap(T& a, T& b){
-	T tmp = a;
-	a = b;
-	b = tmp;
-}
 
 int main(){
-    int a = 1;
-	int b = 2;
-	mySwap(a, b);
+    int a[5] = {1,2,3,4,5};
+	int b[5] = {6,7,8,9,10};
+	int *c;
+	c = a;
+	cout<<c[1];
 	
     system("pause");
 	return 0;
