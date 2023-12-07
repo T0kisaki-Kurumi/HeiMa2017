@@ -1,19 +1,16 @@
 #include <iostream>
 using namespace std;
 
-void func();
-void func(int a, double b){
-	cout<<a<<b<<endl;
-}
-// void func(int c, double d){
-// 	cout<<d<<c<<endl;
-// }
-
 int main(){
-    int a = 1;
-	double b = 1.1;
-	func(a,b);
-	func();
+    int* a = new int(1);
+	int* b = new int(2);
+    const int* p = a;
+	p = b;
+    cout<<*p<<endl;
+	*p = 3;
+    int* const p2 = a;
+	p2 = b;
+    cout<<*p2<<endl;
 	
     system("pause");
 	return 0;
