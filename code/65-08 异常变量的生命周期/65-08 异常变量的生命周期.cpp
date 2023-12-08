@@ -4,26 +4,37 @@ using namespace std;
 class MyException{
 public:
     MyException(){
-        cout<<"MyException构造"<<endl;
+        count++;
+        cout<<"MyException构造"<<count<<endl;
     }
     MyException(const MyException& e){
-        cout<<"MyException拷贝构造"<<endl;
+        count++;
+        cout<<"MyException拷贝构造"<<count<<endl;
     }
 
     ~MyException(){
-        cout<<"MyException析构"<<endl;
+        cout<<"MyException析构"<<count<<endl;
+        count--;
     }
+
+    static int count;
 };
 
-void doWork(){
-    // throw MyException();
-    MyException e;
-    throw &e;
+int MyException::count = 0;
+
+void doWork1(){
+    throw MyException();
+}
+
+void doWork2(){
+    // MyException e;
+    // throw &e;
+    throw new MyException();
 }
 
 void test1(){
     try{
-        doWork();
+        doWork1();
     }
     // catch(MyException){
     //     cout<<"捕获MyException异常"<<endl;
@@ -31,24 +42,24 @@ void test1(){
     // catch(MyException e){
     //     cout<<"捕获MyException异常"<<endl;
     // }
-    // catch(MyException& e){
-    //     cout<<"捕获MyException异常"<<endl;
-    // }
-    catch(MyException* e){
+    catch(MyException& e){
         cout<<"捕获MyException异常"<<endl;
     }
 }
- 
-int main(){
+
+void test2(){
     try{
-        test1();
+        doWork2();
     }
-    catch(int){
-        cout<<"捕获int类型异常"<<endl;
+    catch(MyException* e){
+        cout<<"捕获MyException异常"<<endl;
+        delete e;
     }
-    catch(double){
-        cout<<"捕获double类型异常"<<endl;
-    }
+}
+
+int main(){
+    test1();
+    // test2();
 
     system("pause");
     return 0;
