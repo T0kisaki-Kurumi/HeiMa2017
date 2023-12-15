@@ -1,20 +1,19 @@
 #include <iostream>
 using namespace std;
 
-class base{
-public:
-    virtual void print(){
-        cout<<1<<endl;
+void printArray(int* arr, int len){
+    for(int i=0; i<len; ++i){
+        cout<<arr[i]<<" ";
     }
-};
+    cout<<endl;
+}
 
-class son:public base{
-
-};
+int b[10];
  
 int main(){
-    son().print();
-
+    int a[5]{0};
+    printArray(a,sizeof(a)/sizeof(int));
+    printArray(b,sizeof(b)/sizeof(int));
     system("pause");
     return 0;
 }
