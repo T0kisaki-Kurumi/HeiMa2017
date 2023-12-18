@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <numeric>
 using namespace std;
 
 void test1(){
@@ -20,17 +21,17 @@ void test1(){
 void test2(){
     cout<<"请输入0-10之间的数字："<<endl;
     int num;
-    while(true){
-        cin>>num;
-        if(0<=num && num<=10){
-            cout<<"输入正确，数字为"<<num<<endl;
+   while (true) {
+        cin >> num;
+        if (cin.fail() || num < 0 || num > 10) {
+            cin.clear(); // 清除错误状态
+            cin.sync();
+            // cin.ignore(); // 忽略之前的输入
+            cout << "输入无效，请重新输入0-10之间的数字：" << endl;
+        } else {
+            cout << "输入正确，数字为" << num << endl;
             break;
         }
-        cout<<"输入错误，请重新输入："<<endl;
-        cin.clear();
-        cin.sync();
-        cin.ignore();
-        
     }
 }
 
