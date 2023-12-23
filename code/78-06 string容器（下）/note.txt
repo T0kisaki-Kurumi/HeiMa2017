@@ -1,0 +1,6 @@
+1. insert(pos, str) 在pos位置之前插入字符串（不能是字符）
+   insert(pos, n, char) 在pos位置之前插入n个字符
+2. erase(pos, n) 删除从pos位置开始的n个字符
+   erase(pos) 删除从pos位置开始的所有字符
+3. const char* 转string，可以隐式类型转换，或者直接放到构造函数里面
+   string转const char*, 只能
