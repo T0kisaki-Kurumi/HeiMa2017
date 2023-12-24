@@ -27,15 +27,37 @@ void test3(){
 
     // 隐式类型转换
     string s3 = str;
-    const char* str3 = s;
+    // const char* str3 = s;
 }
 
 void test4(){
-    
+    string s = "12345";
+    char& a = s[1];
+    a = 'a';
+    cout<<s<<endl;
+    cout<<(int*)s.c_str()<<endl; //地址
+
+    s = "66666";
+    a = 'b';
+    cout<<s<<endl;
+    cout<<(int*)s.c_str()<<endl; //地址
+
+    s = "66666666666666666666666";
+    a = 'b';
+    cout<<s<<endl;
+    cout<<(int*)s.c_str()<<endl; //地址
 }
 
 void test5(){
-    
+    string s = "AuiIUHbb";
+    for(char& c: s){
+        c = toupper(c);
+    }
+    cout<<s<<endl;
+    for(char& c: s){
+        c = tolower(c);
+    }
+    cout<<s<<endl;
 }
 
 void test6(){
@@ -45,9 +67,9 @@ void test6(){
 int main(){
     // test1();
     // test2();
-    test3();
+    // test3();
     // test4();
-    // test5();
+    test5();
     // test6();
 
     system("pause");
