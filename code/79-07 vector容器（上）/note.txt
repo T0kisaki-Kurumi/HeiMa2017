@@ -2,8 +2,10 @@
    当容量也满了的时候，再增加元素就要进行动态增加大小的操作。动态增加大小并不是在原空间之后开辟新空间（因为不能保证新的空间可用），而是
    直接去找一块更大的内存空间，然后把原数据拷贝到更大的空间中，同时释放原空间。
    *注意：一旦产生了空间的重新配置，原vector的迭代器就全部失效了，需要小心
-
-
+2. resize(num) 重新指定容器长度为num，resize(num, elem) 用elem填充，默认为0填充
+3. insert(pos, elem)，在pos迭代器指向位置的前面插入一个elem
+   insert(pos, num, elem)，在pos迭代器指向位置的前面插入num个elem
+   和string容器的insert不同，string中pos是int类型，vector中pos是迭代器类型
 
 
 
