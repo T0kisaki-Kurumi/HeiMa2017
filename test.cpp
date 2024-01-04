@@ -1,19 +1,28 @@
 #include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
-void printArray(int* arr, int len){
-    for(int i=0; i<len; ++i){
-        cout<<arr[i]<<" ";
+class Solution{
+public:
+    static bool cmp(int a, int b){
+        return a>b;
     }
-    cout<<endl;
-}
 
-int b[10];
+    void solve(){
+        vector<int> v{1,2,3,4,5};
+        sort(v.begin(), v.end(), cmp);
+        for(int i: v){
+            cout<<i<<" ";
+        }
+        cout<<endl;
+    }
+};
  
 int main(){
-    int a[5]{0};
-    printArray(a,sizeof(a)/sizeof(int));
-    printArray(b,sizeof(b)/sizeof(int));
+    Solution s;
+    s.solve();
+
     system("pause");
     return 0;
 }
