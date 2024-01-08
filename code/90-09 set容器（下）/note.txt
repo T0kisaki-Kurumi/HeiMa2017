@@ -3,4 +3,4 @@
 2. multiset的insert函数只返回一个迭代器iterator，不返回bool
 3. multiset就包含在set头文件中
 4. 可以用例如set<int, cmp>修改set的排序规则，对于自定义数据类型，必须指定cmp。
-   cmp是一个仿函数，通过重载()运算符实现，运算符重载函数中的参数必须用const修饰
+   cmp是一个仿函数，通过重载()运算符实现，运算符重载函数中的参数如果是引用类型，必须用const修饰
